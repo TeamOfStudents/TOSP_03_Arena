@@ -1,0 +1,40 @@
+name: Auto Assign to Project(s)
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+env:
+  GITHUB_TOKEN: ${{ secrets.MY_ACTION_TOKEN }}
+
+jobs:
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: Assign to One Project
+    steps:
+    - name: Assign NEW issues to project https://github.com/TeamOfStudents/TOSP_03_Arena/projects/1
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event_name == 'issues' 
+      with:
+        project: 'https://github.com/TeamOfStudents/TOSP_03_Arena/projects/1'
+        column_name: 'ToDo'
+
+
+    - name: Assign NEW pull requests to project https://github.com/TeamOfStudents/TOSP_03_Arena/projects/2
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
+      with:
+        project: 'https://github.com/TeamOfStudents/TOSP_03_Arena/projects/2'
+        column_name: 'Review required'
+
+      
+
+    - name: Assign NEW DRAFT pull requests to project https://github.com/TeamOfStudents/TOSP_03_Arena/projects/2
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event_name == 'pull_request' && github.event.pull_request.draft == true
+      with:
+        project: 'https://github.com/TeamOfStudents/TOSP_03_Arena/projects/2'
+        column_name: 'Draft'
+
+  
