@@ -17,7 +17,7 @@ In einer mit Java programmierten Umgebung (Arena) fliegen Drohnen umher, müssen
 In der aktuellen Version (Nov. 2021) müssen die Drohnen nur eine Reihe von Wegpunkten abfliegen, die Visualisierung ist nur rudimentär vorhanden (Punkte bewegen sich auf einer Zeichenfläche).
 Enticklungsziele:
 - Entwicklung einer GUI, Verbesserung der aktuellen Visualisierung
-- Verbesserung der Drohnen "KI". Insbesondere diese Aufgabe ist leicht skalierbar, die mehrere Entwickler parallel unterschiedliche Drohnenlogiken entwickeln können. Diese Drohnenlogiken können dann in der Arena gegeneinander getestet werden
+- Verbesserung der Drohnen KI. Insbesondere diese Aufgabe ist leicht skalierbar, da mehrere Entwickler parallel unterschiedliche Drohnenlogiken entwickeln können. Diese Drohnenlogiken können dann in der Arena gegeneinander getestet werden.
 - Weiterentwicklung der zugrunde liegenden Arena Logik, der verfügbaren Aufgaben etc.
 
 ## Anleitung
